@@ -1,0 +1,10 @@
+title: "Exploring Compiler Engineering Through LLVM"
+description: "Technical notes and experiences exploring compiler engineering and LLVM."
+author: "Tejas Gaikwad"
+
+theme: minima
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
