@@ -1,21 +1,23 @@
 ---
+
 layout: post
 title: "Exploring Compilers Through LLVM"
 date: 2026-09-26
 author: "Tejas Gaikwad"
 categories: [LLVM, Compilers]
-tags: [LLVM, Compilers, Optimization, GlobalISel, InstCombine]
----
+tags: [LLVM, Compiler Engineering, Optimization, GlobalISel, InstCombine]
+-------------------------------------------------------------------------
 
-# Introduction
+# Exploring Compilers Through LLVM
 
-Compilers brings together several areas of computer science and systems engineering: programming languages, program analysis, optimization, instruction selection, and computer architecture. My interest in the field grew from wanting to understand what happens between source code and the machine instructions ultimately executed by a processor, and more importantly, how compilers reason about programs to produce better code.
+Over the past several months, I have been exploring compiler engineering through LLVM, with a particular focus on optimization and code generation.
 
-LLVM provided a practical way to explore these concepts in depth. Rather than treating the compiler as a black box, I began studying its intermediate representations, analyses, transformations, and code-generation infrastructure. This led me through topics such as LLVM IR and SSA, basic blocks and control flow, optimization passes, SelectionDAG, GlobalISel, Machine IR, TableGen, InstCombine, ValueTracking, KnownBits, loop optimization, and vectorization.
+I started by studying LLVM's architecture and understanding how its different components interact. This gradually developed into hands-on investigation of LLVM issues, reduced test cases, compiler transformations, and the implementation behind them.
 
-As my understanding developed, I started moving from studying concepts to investigating real compiler behavior. I worked through LLVM issues involving missed optimizations, analyzed reduced test cases, traced transformations through the LLVM source, and used tools such as `opt`, `llc`, `llvm-reduce`, `llvm-lit`, FileCheck, and GDB to understand why a particular transformation did or did not occur.
+My work so far has included GlobalISel, SelectionDAG, InstCombine, ValueTracking, KnownBits, loop optimization, and vectorization. Along the way, I have investigated missed optimizations and contributed changes upstream.
 
-This eventually led to upstream contributions in LLVM, including work in GlobalISel and KnownBits, along with further investigations into ValueTracking and InstCombine. Working on these problems provided a different perspective on compiler development: a seemingly small optimization can involve understanding the semantics of an IR operation, existing analysis infrastructure, legality and correctness constraints, and the interaction between multiple compiler components.
+One of my first contributions involved GlobalISel and KnownBits, where I worked on reasoning about the parity of `ctpop` results. I later explored an InstCombine transformation involving `copysign`, investigated ValueTracking and KnownBits behavior, and worked through several other LLVM optimization and code-generation issues.
 
-This article is a technical retrospective of that learning process. It covers the compiler concepts and LLVM infrastructure I explored, the problems I investigated, the contributions I made, and the development and debugging workflow I have been building along the way.
+These contributions have given me an opportunity to work beyond the surface level of compiler behavior — reading LLVM's C++ implementation, reducing test cases, tracing transformations, writing regression tests, debugging with GDB, and working through upstream review.
 
+This post is a short overview of that work so far, the problems I have investigated, and the areas of LLVM I am continuing to explore.
