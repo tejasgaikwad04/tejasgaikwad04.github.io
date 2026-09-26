@@ -1,8 +1,7 @@
 ---
-
 layout: home
 title: "Exploring Compilers Through LLVM"
------------------------------------------
+---
 
 # Exploring Compilers Through LLVM
 
@@ -22,14 +21,14 @@ A technical overview of my LLVM work so far, including contributions to GlobalIS
 
 ## Areas of Work
 
-* **GlobalISel & KnownBits**
-* **InstCombine & `copysign`**
-* **ValueTracking**
-* **Loop Optimization & Vectorization**
-* **SelectionDAG**
-* **Compiler Optimization**
-* **LLVM Debugging & Testing**
-* **Compiler Performance Analysis**
+- **GlobalISel & KnownBits**
+- **InstCombine & `copysign`**
+- **ValueTracking**
+- **Loop Optimization & Vectorization**
+- **SelectionDAG**
+- **Compiler Optimization**
+- **LLVM Debugging & Testing**
+- **Compiler Performance Analysis**
 
 ---
 
