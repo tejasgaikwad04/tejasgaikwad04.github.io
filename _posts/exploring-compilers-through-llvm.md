@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "Exploring Compilers Through LLVM"
-permalink: /exploring-compilers-through-llvm/
+permalink: /2026/09/26/exploring-compilers-through-llvm.html
+published: true
 author: "Tejas Gaikwad"
 ---
 Over the past several months, I have been exploring compiler engineering through LLVM, with a particular focus on optimization and code generation.
