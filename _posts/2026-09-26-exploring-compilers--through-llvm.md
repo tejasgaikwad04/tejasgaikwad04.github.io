@@ -1,12 +1,5 @@
 ---
 
-layout: post
-title: "Exploring Compilers Through LLVM"
-date: 2026-09-26
-author: "Tejas Gaikwad"
-categories: [LLVM, Compilers]
-tags: [LLVM, Compiler Engineering, Optimization, GlobalISel, InstCombine]
--------------------------------------------------------------------------
 
 # Exploring Compilers Through LLVM
 
