@@ -2,8 +2,10 @@ title: "Exploring Compilers Through LLVM"
 description: "Technical notes and experiences exploring compiler engineering and LLVM."
 author: "Tejas Gaikwad"
 
-theme: minima
+url: "https://tejasgaikwad04.github.io"
+baseurl: ""
 
+theme: minima
 markdown: kramdown
 
 plugins:
