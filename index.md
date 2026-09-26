@@ -15,8 +15,7 @@ Over the past several months, I have been exploring different areas of LLVM thro
 
 A technical overview of my LLVM work so far, including contributions to GlobalISel and InstCombine, exploration of KnownBits and ValueTracking, and investigations into loop optimization, vectorization, and other compiler optimizations.
 
-[Read the article →](/2026/09/26/exploring-compilers-through-llvm/)
-
+[Read the article →](/2026/09/26/exploring-compilers-through-llvm.html)
 ---
 
 ## Areas of Work
