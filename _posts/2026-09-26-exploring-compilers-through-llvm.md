@@ -1,8 +1,11 @@
 ---
-
-
-# Exploring Compilers Through LLVM
-
+layout: post
+title: "Exploring Compilers Through LLVM"
+date: 2026-09-26
+author: "Tejas Gaikwad"
+categories: [LLVM, Compilers]
+tags: [LLVM, Compiler Engineering, Optimization, GlobalISel, InstCombine]
+---
 Over the past several months, I have been exploring compiler engineering through LLVM, with a particular focus on optimization and code generation.
 
 I started by studying LLVM's architecture and understanding how its different components interact. This gradually developed into hands-on investigation of LLVM issues, reduced test cases, compiler transformations, and the implementation behind them.
@@ -235,3 +238,91 @@ This required understanding where constant arithmetic is folded in SelectionDAG 
 
 Although these investigations did not all result in upstream changes, they were valuable for understanding another part of LLVM's code-generation pipeline and how optimization opportunities can exist
 
+## How I Work on LLVM Issues
+
+One of the biggest changes in my approach to LLVM has been learning how to investigate a compiler problem systematically.
+
+### Reproducing the Problem
+
+I start by making sure I can reproduce the reported behavior locally. A small and reliable reproducer makes the rest of the investigation much easier.
+
+I typically inspect the LLVM IR or MIR involved and compare the behavior before and after the relevant optimization pass.
+
+### Reducing the Test Case
+
+When the original reproducer is large, I try to reduce it to the smallest example that still demonstrates the problem.
+
+LLVM's `llvm-reduce` tool has been particularly useful for this. A reduced test case makes it easier to understand the actual compiler behavior and significantly reduces the amount of code that needs to be investigated.
+
+### Finding the Relevant Code
+
+Once the behavior is reproducible, I trace the transformation through LLVM's source code.
+
+This usually involves identifying the optimization or analysis responsible for the behavior and then locating the corresponding implementation.
+
+For example, depending on the issue, this can lead to areas such as:
+
+```text id="5djx7n"
+InstCombine
+ValueTracking
+KnownBits
+GlobalISel
+SelectionDAG
+Loop Vectorizer
+```
+
+Learning to find the relevant implementation independently has become an important part of my LLVM workflow.
+
+### Debugging
+
+For more complicated cases, I use LLVM's debugging facilities and GDB to follow the compiler's execution.
+
+Setting breakpoints in the relevant transformation and inspecting the IR at different points can reveal why an expected optimization is not being performed.
+
+This has been especially useful for understanding cases where the compiler's behavior is not obvious from the final generated IR.
+
+### Testing
+
+After identifying a possible change, I add or update a focused regression test.
+
+I then run the relevant LLVM tests with `llvm-lit` and, when necessary, inspect the generated IR or MIR to verify that the transformation behaves as expected.
+
+### Upstream Review
+
+For upstream contributions, the process does not end when the code works locally.
+
+Review feedback often leads to changes in implementation style, pattern matching, test structure, or code organization. Working through that feedback has helped me understand LLVM's development practices and the importance of keeping changes focused and maintainable.
+
+This workflow — **reproduce, reduce, locate, debug, implement, test, and review** — has become the foundation of how I approach LLVM issues.
+
+## What I've Learned
+
+Working on LLVM has changed the way I approach compiler problems.
+
+I have learned that understanding an optimization is often more important than simply knowing that it exists. Following a transformation from LLVM IR to the relevant C++ implementation, reducing a reproducer, and debugging the compiler has helped me build a much more concrete understanding of compiler internals.
+
+The upstream contribution process has also taught me the importance of small, focused changes. A good compiler change is not only about making an optimization work; it also needs a clear reproducer, an appropriate regression test, maintainable implementation, and compatibility with the existing compiler infrastructure.
+
+Most importantly, working on real LLVM issues has helped connect the concepts I studied with the behavior of an actual production compiler.
+
+## What's Next
+
+I want to continue contributing to LLVM while exploring deeper areas of compiler optimization and code generation.
+
+Some of the areas I am particularly interested in are **Global Value Numbering, missed optimizations, loop transformations, vectorization, instruction selection, and backend performance**.
+
+I also want to spend more time understanding how LLVM optimizations affect generated machine code and performance on real workloads.
+
+My goal is to continue moving from investigating individual compiler behaviors toward taking on larger optimization problems and contributing more consistently upstream.
+
+## Conclusion
+
+My work with LLVM so far has been a combination of contributions, investigations, debugging, and continuous learning.
+
+The two contributions described here — work in GlobalISel's `KnownBits` reasoning and an InstCombine transformation involving `copysign` — gave me the opportunity to work directly with LLVM's implementation and upstream development process.
+
+The additional investigations into ValueTracking, KnownBits, SelectionDAG, loop optimization, and vectorization have helped broaden my understanding of how different parts of LLVM interact.
+
+There is still a lot more to explore, but working on real compiler problems has given me a strong foundation for continuing in this direction.
+
+I plan to keep contributing, investigating optimization opportunities, and documenting what I learn along the way.
