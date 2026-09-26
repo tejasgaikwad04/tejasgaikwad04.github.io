@@ -1,25 +1,35 @@
 ---
+
 layout: home
-title: "Exploring Compiler Engineering Through LLVM"
----
+title: "Exploring Compilers Through LLVM"
+-----------------------------------------
 
-# Exploring Compiler Engineering Through LLVM
+# Exploring Compilers Through LLVM
 
-Welcome to my technical blog.
+A technical blog documenting my work and exploration in LLVM, with a focus on compiler optimization, code generation, and upstream contributions.
 
-I use this space to document my exploration of compiler engineering through LLVM, with a focus on compiler optimization, code generation, and practical investigation of compiler behavior.
-
-My work so far has involved studying LLVM IR and SSA, optimization passes, SelectionDAG, GlobalISel, Machine IR, TableGen, InstCombine, ValueTracking, KnownBits, loop optimization, and vectorization.
-
-Along the way, I have also started investigating real LLVM issues, building reduced reproducers, tracing compiler transformations, writing regression tests, debugging LLVM with GDB, and contributing changes upstream.
+Over the past several months, I have been exploring different areas of LLVM through hands-on investigation, implementation, debugging, and open-source contribution.
 
 ## Featured Article
 
-### Exploring Compiler Engineering Through LLVM
+### Exploring Compilers Through LLVM
 
-A technical retrospective on the concepts, investigations, and LLVM contributions that have shaped my understanding of compiler engineering.
+A technical overview of my LLVM work so far, including contributions to GlobalISel and InstCombine, exploration of KnownBits and ValueTracking, and investigations into loop optimization, vectorization, and other compiler optimizations.
 
-**Coming soon.**
+[Read the article →](/2026/09/26/exploring-compilers-through-llvm/)
+
+---
+
+## Areas of Work
+
+* **GlobalISel & KnownBits**
+* **InstCombine & `copysign`**
+* **ValueTracking**
+* **Loop Optimization & Vectorization**
+* **SelectionDAG**
+* **Compiler Optimization**
+* **LLVM Debugging & Testing**
+* **Compiler Performance Analysis**
 
 ---
 
@@ -27,21 +37,12 @@ A technical retrospective on the concepts, investigations, and LLVM contribution
 
 I am interested in compiler engineering, LLVM internals, compiler optimization, code generation, and performance analysis.
 
-This blog focuses on practical learning through source-code exploration, experimentation, debugging, and open-source contribution.
+This blog documents my hands-on work with LLVM — from investigating compiler behavior and reducing test cases to implementing changes, writing regression tests, debugging the compiler, and contributing upstream.
 
 ---
 
-## Topics
+## LLVM
 
-- LLVM
-- Compiler Optimization
-- GlobalISel
-- SelectionDAG
-- InstCombine
-- ValueTracking
-- KnownBits
-- LLVM IR
-- Machine IR
-- Loop Optimization
-- Vectorization
-- Compiler Performance
+The work documented here includes both upstream contributions and ongoing investigations into LLVM issues and optimization opportunities.
+
+You can find the corresponding LLVM issues, pull requests, tests, and implementation details throughout the articles.
