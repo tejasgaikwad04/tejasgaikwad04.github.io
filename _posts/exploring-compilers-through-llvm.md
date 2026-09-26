@@ -1,9 +1,11 @@
 ---
-layout: page
+layout: post
 title: "Exploring Compilers Through LLVM"
-permalink: /2026/09/26/exploring-compilers-through-llvm.html
-published: true
+date: 2026-09-26
 author: "Tejas Gaikwad"
+permalink: /2026/09/26/exploring-compilers-through-llvm.html
+categories: [LLVM, Compilers]
+tags: [LLVM, Compiler Engineering, Optimization, GlobalISel, InstCombine]
 ---
 Over the past several months, I have been exploring compiler engineering through LLVM, with a particular focus on optimization and code generation.
 
