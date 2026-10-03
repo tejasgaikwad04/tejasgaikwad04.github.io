@@ -1,6 +1,5 @@
 ---
 layout: home
-title: "Exploring Compilers Through LLVM"
 ---
 
 # Exploring Compilers Through LLVM
