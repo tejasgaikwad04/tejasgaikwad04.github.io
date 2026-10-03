@@ -1,6 +1,5 @@
 ---
 layout: default
-title: Exploring Compilers Through LLVM
 ---
 
 A technical blog documenting my work and exploration in LLVM, with a focus on compiler optimization, code generation, and upstream contributions.
