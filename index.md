@@ -1,11 +1,13 @@
 ---
-layout: home
+layout: default
+title: Exploring Compilers Through LLVM
 ---
-
 
 A technical blog documenting my work and exploration in LLVM, with a focus on compiler optimization, code generation, and upstream contributions.
 
 Over the past several months, I have been exploring different areas of LLVM through hands-on investigation, implementation, debugging, and open-source contribution.
+
+---
 
 ## Featured Article
 
@@ -14,6 +16,7 @@ Over the past several months, I have been exploring different areas of LLVM thro
 A technical overview of my LLVM work so far, including contributions to GlobalISel and InstCombine, exploration of KnownBits and ValueTracking, and investigations into loop optimization, vectorization, and other compiler optimizations.
 
 [Read the article ->]({% post_url 2026-09-26-exploring-compilers-through-llvm %})
+
 ---
 
 ## Areas of Work
